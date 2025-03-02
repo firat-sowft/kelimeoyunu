@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // API endpoint'i için bir değişken tanımlayalım
+    // Railway'den aldığınız URL'i buraya yazın
     const API_BASE_URL = 'https://kelimeoyunu-production.up.railway.app';
 
     // Splash screen'i 3 saniye sonra gizle
