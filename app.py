@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, make_response, send_from_directory
+from flask import Flask, request, jsonify, make_response
 from pymongo import MongoClient
 import smtplib
 from email.mime.text import MIMEText
@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 # MongoDB bağlantısı
@@ -142,14 +142,6 @@ def login():
         return json_response({'user': {'name': user['name'], 'surname': user['surname']}}, 200)
     else:
         return json_response({'error': 'Geçersiz e-posta veya şifre'}, 401)
-
-@app.route('/')
-def index():
-    return send_from_directory('.', 'index.html')
-
-@app.route('/<path:path>')
-def serve_file(path):
-    return send_from_directory('.', path)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
