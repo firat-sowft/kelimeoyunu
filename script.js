@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Railway'den aldığınız URL'i buraya yazın
-    const API_BASE_URL = 'https://kelimeoyunu-production.up.railway.app';
+    const API_BASE_URL = 'https://web-production-60edd.up.railway.app';
 
     // Splash screen'i 3 saniye sonra gizle
     setTimeout(() => {
